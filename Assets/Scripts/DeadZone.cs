@@ -14,6 +14,10 @@ public class DeadZone : MonoBehaviour {
 			MoveBallBlock.Unblock ();
 			col.transform.position = spawn.transform.position;
 			Stop.ResetVelocity ();
+		} else if (col.tag == "Extra") {
+			BallManager.removeBall();
+			Destroy(col.GetComponent<MeshRenderer>());
+			Destroy(col);
 		}
     }
 }
